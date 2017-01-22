@@ -1,3 +1,31 @@
 h1 {
     text-align: center;
 }
+
+.drum-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+}
+
+.drum {
+    border: 1px solid black;
+    flex-basis: 64px;
+    height: 64px;
+    cursor: pointer;
+
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+span {
+    text-align: center;
+}
+
+span:nth-child(1) {
+    font-size: 36px;
+}
