@@ -2,19 +2,23 @@ h1 {
     text-align: center;
 }
 
-.drum-wrap {
+.drums {
     max-width: 900px;
     margin: 0 auto;
 
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
+    flex-flow: row wrap;
+}
 
+.drum-wrap {
+    padding-bottom: 32px;
+    flex-basis: 33.33%;
 }
 
 .drum {
     border: 1px solid black;
-    flex-basis: 64px;
+    margin: 0 auto;
+    width: 64px;
     height: 64px;
     cursor: pointer;
 
@@ -28,4 +32,14 @@ span {
 
 span:nth-child(1) {
     font-size: 36px;
+}
+
+@media (min-width: 700px) {
+    .drums {
+        flex-flow: row nowrap;
+    }
+
+    .drum-wrap {
+        flex: 1;
+    }
 }
