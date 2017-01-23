@@ -1,13 +1,25 @@
-// Click event for each drum
+function activateDrum(drum) {
+    const audio = document.querySelector(`audio[data-key="${drum.dataset.key}"]`);
+
+    drum.classList.add('playing');
+
+    audio.currentTime = 0;
+    audio.play();
+}
+
+function removeTransition(e) {
+    if(e.propertyName != 'transform') return;
+    // console.log(e.target);
+    e.target.classList.remove('playing');
+}
+
+// Events for each drum
 //
 const drums = document.querySelectorAll('.drum');
-drums.forEach(d => {
-    d.addEventListener('click', e => {
-        const audio = document.querySelector(`audio[data-key="${d.dataset.key}"]`);
 
-        audio.currentTime = 0;
-        audio.play();
-    });
+drums.forEach(drum => {
+    drum.addEventListener('click', e => { activateDrum(drum); });
+    drum.addEventListener('transitionend', removeTransition);
 });
 
 // Keyboard Input
